@@ -1,0 +1,11 @@
+services: 
+  blogging-api: 
+    image: 69966/go-blogging-api:1.0.0
+    container_name: blogging-api-cont
+    ports:
+      - 8080:8080 
+    volumes:
+      - ./app.env:/app/app.env 
+      - ./blog.db:/app/blog.db
+      - ./uploads:/app/uploads
+    restart: unless-stopped
